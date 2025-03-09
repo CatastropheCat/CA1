@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ประมวลผลข้อความ</title>
+</head>
+<body>
+  <textarea id="inputText" rows="10" cols="60">Two elite snipers receive identical missions: travel to a secret location and guard the west and east sides of a deep gorge for one year without any contact with the outside world or their counterparts on the opposite sides. Levi Kane, a former U.S. Marine Scout/Sniper and current private contractor agrees to guard the west tower. Drasa, a Lithuanian covert operative frequently employed by the Kremlin, guards the east side. Levi suffers from nightmares stemming from the guilt he has from killing enemies, while Drasa's father, Erikas, plans to suicide on Valentine's Day to reunite with his late wife.</textarea><br>
+  
+  <button onclick="processText()">Process</button><br><br>
+  <div id="results"></div>
+
+  <script>
+    function processText() {
+      let text = document.getElementById("inputText").value;
+      let resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+      
+      let usIndex = text.indexOf("U.S.");
+      resultsDiv.innerHTML += "1. ตำแหน่งของคำว่า U.S: " + usIndex + "<br>";
+
+      let theCount = 0;
+      let words = text.split(" ");
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === "the" || words[i] === "The") {
+          theCount++;
+        }
+      }
+      resultsDiv.innerHTML += "2. จำนวนของ the และ The: " + theCount + "<br>";
+
+      let newText = text.replace(/Drasa/g, "actress");
+      resultsDiv.innerHTML += "3. เปลี่ยนข้อความ จาก Drasa เป็น actress: " + newText + "<br>";
+
+    }
+  </script>
+</body>
+</html>
