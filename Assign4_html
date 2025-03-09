@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>รับค่าจาก Prompt และแสดงผลเป็นลำดับ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>List</h1>
+    <ul id="myList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

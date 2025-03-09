@@ -1,0 +1,18 @@
+let dataArray = [];
+let input;
+
+do {
+    input = prompt("ป้อนข้อมูล (กด 'ยกเลิก' เพื่อหยุด):");
+    if (input !== null) {
+        dataArray.push(input);
+    }
+} while (input !== null);
+
+dataArray.sort();
+
+const list = document.getElementById("myList");
+dataArray.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    list.appendChild(li);
+});
